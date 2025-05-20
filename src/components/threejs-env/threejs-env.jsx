@@ -54,11 +54,6 @@ function ThreeJSEnv() {
     controls.maxPolarAngle = Math.PI / 2;
     controls.zoomSpeed = 1.0; // Default zoom speed
 
-    controls.enabled = spectatorMode;
-    controls.enableZoom = spectatorMode;
-    controls.enableRotate = spectatorMode;
-    controls.enablePan = spectatorMode;
-
     // Grid Helper
     const gridHelper = new THREE.GridHelper(100, 100);
     scene.add(gridHelper);
@@ -97,6 +92,15 @@ function ThreeJSEnv() {
     };
   }, []);
 
+  useEffect(() => {
+  if (controlsRef) {
+    controlsRef.enabled = spectatorMode;
+    controlsRef.enableZoom = spectatorMode;
+    controlsRef.enableRotate = spectatorMode;
+    controlsRef.enablePan = spectatorMode;
+  }
+}, [spectatorMode, controlsRef]);
+
   return (
     <>
     <button
@@ -132,7 +136,7 @@ function ThreeJSEnv() {
           <SpectatorMode 
             camera={cameraRef} 
             controls={controlsRef} 
-            moveSpeed={0.1}
+            moveSpeed={1}
             rotateSpeed={0.05}
           />
         )}
