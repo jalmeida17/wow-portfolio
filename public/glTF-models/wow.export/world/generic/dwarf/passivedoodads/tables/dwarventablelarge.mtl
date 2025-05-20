@@ -1,0 +1,3 @@
+newmtl mat_dwarventablebase
+illum 1
+map_Kd dwarventablebase.png

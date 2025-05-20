@@ -1,0 +1,6 @@
+newmtl mat_rowboat01
+illum 1
+map_Kd ..\..\..\..\lordaeron\tirisfalglade\passivedoodads\barricade\rowboat01.png
+newmtl mat_redridgedockplank02
+illum 1
+map_Kd ..\dockpieces\redridgedockplank02.png

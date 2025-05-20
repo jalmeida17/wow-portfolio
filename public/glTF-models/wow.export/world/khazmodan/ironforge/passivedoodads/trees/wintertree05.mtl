@@ -1,0 +1,9 @@
+newmtl mat_winterspringtreetrunkbase09
+illum 1
+map_Kd winterspringtreetrunkbase09.png
+newmtl mat_winterspringtreeneedles09
+illum 1
+map_Kd winterspringtreeneedles09.png
+newmtl mat_winterspringbranch09
+illum 1
+map_Kd winterspringbranch09.png

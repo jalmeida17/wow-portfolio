@@ -1,0 +1,12 @@
+newmtl mat_ironforgesteamtank01
+illum 1
+map_Kd ironforgesteamtank01.png
+newmtl mat_armorreflect01
+illum 1
+map_Kd ..\..\..\..\generic\goblin\passivedoodads\goblinmachinery\armorreflect01.png
+newmtl mat_ironforgesteamtank02
+illum 1
+map_Kd ironforgesteamtank02.png
+newmtl mat_gryphonhead
+illum 1
+map_Kd gryphonhead.png

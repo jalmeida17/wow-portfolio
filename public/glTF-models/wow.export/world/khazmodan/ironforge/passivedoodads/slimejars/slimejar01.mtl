@@ -1,0 +1,12 @@
+newmtl mat_slimejar01
+illum 1
+map_Kd slimejar01.png
+newmtl mat_slimejargoo
+illum 1
+map_Kd slimejargoo.png
+newmtl mat_felwoodbubbles01
+illum 1
+map_Kd felwoodbubbles01.png
+newmtl mat_battlegladeskull04green
+illum 1
+map_Kd ..\..\..\..\azeroth\swamposorrow\passivedoodads\swampboats\battlegladeskull04green.png

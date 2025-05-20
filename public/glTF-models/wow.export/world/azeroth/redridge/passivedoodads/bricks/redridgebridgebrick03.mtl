@@ -1,0 +1,3 @@
+newmtl mat_bridgerailtop
+illum 1
+map_Kd ..\..\..\..\environment\doodad\redridge\bridge\texture\rev.dan\bridgerailtop.png

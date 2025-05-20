@@ -1,0 +1,3 @@
+newmtl mat_ironforgepiston
+illum 1
+map_Kd ironforgepiston.png

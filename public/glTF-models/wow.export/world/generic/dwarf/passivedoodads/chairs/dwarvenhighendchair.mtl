@@ -1,0 +1,3 @@
+newmtl mat_highchair_01
+illum 1
+map_Kd highchair_01.png

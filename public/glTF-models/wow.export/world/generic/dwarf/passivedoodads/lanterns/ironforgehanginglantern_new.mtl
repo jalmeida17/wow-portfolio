@@ -1,0 +1,9 @@
+newmtl mat_dwarven_hanging_lantern_glass
+illum 1
+map_Kd dwarven_hanging_lantern_glass.png
+newmtl mat_goldlanterntrim
+illum 1
+map_Kd goldlanterntrim.png
+newmtl mat_chain02
+illum 1
+map_Kd chain02.png

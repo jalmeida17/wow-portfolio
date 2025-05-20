@@ -1,0 +1,9 @@
+newmtl mat_basicbone
+illum 1
+map_Kd basicbone.png
+newmtl mat_ramskull
+illum 1
+map_Kd ramskull.png
+newmtl mat_mm_irnfg_war_wall_01
+illum 1
+map_Kd ..\..\..\..\..\dungeons\textures\walls\mm_irnfg_war_wall_01.png

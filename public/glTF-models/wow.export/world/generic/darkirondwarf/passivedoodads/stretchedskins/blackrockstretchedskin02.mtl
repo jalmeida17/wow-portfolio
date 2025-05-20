@@ -1,0 +1,6 @@
+newmtl mat_blackrockorcskingrey
+illum 1
+map_Kd blackrockorcskingrey.png
+newmtl mat_blackrockorcposts
+illum 1
+map_Kd blackrockorcposts.png

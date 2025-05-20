@@ -1,0 +1,6 @@
+newmtl mat_tallstriderskingray
+illum 1
+map_Kd ..\..\..\..\..\creature\tallstrider\tallstriderskingray.png
+newmtl mat_elfgate_stone01
+illum 1
+map_Kd ..\..\..\nightelf\passivedoodads\fountains\elfgate_stone01.png

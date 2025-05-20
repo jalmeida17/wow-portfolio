@@ -1,0 +1,9 @@
+newmtl mat_ironforgeleaves01
+illum 1
+map_Kd ironforgeleaves01.png
+newmtl mat_ironforgebark01
+illum 1
+map_Kd ironforgebark01.png
+newmtl mat_ironforgebottom01
+illum 1
+map_Kd ironforgebottom01.png

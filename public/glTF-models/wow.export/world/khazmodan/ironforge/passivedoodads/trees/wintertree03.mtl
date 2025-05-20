@@ -1,0 +1,9 @@
+newmtl mat_trunknew02
+illum 1
+map_Kd trunknew02.png
+newmtl mat_wintersticks01
+illum 1
+map_Kd wintersticks01.png
+newmtl mat_wintericybranch02
+illum 1
+map_Kd wintericybranch02.png

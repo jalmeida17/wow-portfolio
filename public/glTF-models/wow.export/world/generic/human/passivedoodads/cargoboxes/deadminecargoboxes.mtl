@@ -1,0 +1,15 @@
+newmtl mat_eb_crate_variant005
+illum 1
+map_Kd eb_crate_variant005.png
+newmtl mat_eb_crate_variant002
+illum 1
+map_Kd eb_crate_variant002.png
+newmtl mat_eb_crate_variant001
+illum 1
+map_Kd eb_crate_variant001.png
+newmtl mat_eb_crate_variant004
+illum 1
+map_Kd eb_crate_variant004.png
+newmtl mat_eb_crate_variant003
+illum 1
+map_Kd eb_crate_variant003.png

@@ -1,0 +1,9 @@
+newmtl mat_trunknew02
+illum 1
+map_Kd trunknew02.png
+newmtl mat_wintertreeneedles01
+illum 1
+map_Kd wintertreeneedles01.png
+newmtl mat_wintertree05branch
+illum 1
+map_Kd wintertree05branch.png

@@ -1,0 +1,6 @@
+newmtl mat_screen_color
+illum 1
+map_Kd screen_color.png
+newmtl mat_js_troff_6
+illum 1
+map_Kd js_troff_6.png

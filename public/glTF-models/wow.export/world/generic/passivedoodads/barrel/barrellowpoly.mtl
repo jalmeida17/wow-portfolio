@@ -1,0 +1,3 @@
+newmtl mat_stormwind_barrel
+illum 1
+map_Kd stormwind_barrel.png

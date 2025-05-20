@@ -1,0 +1,6 @@
+newmtl mat_dragonkin_egg
+illum 1
+map_Kd ..\..\..\..\goober\dragonkin_egg.png
+newmtl mat_dragonkinnestdark01
+illum 1
+map_Kd dragonkinnestdark01.png

@@ -1,0 +1,9 @@
+newmtl mat_deepholm_crystalchalk_01
+illum 1
+map_Kd deepholm_crystalchalk_01.png
+newmtl mat_deepholm_mineralreflect_02
+illum 1
+map_Kd deepholm_mineralreflect_02.png
+newmtl mat_deepholm_mineral_glow_04
+illum 1
+map_Kd deepholm_mineral_glow_04.png

@@ -1,0 +1,3 @@
+newmtl mat_dwarvensignpostbase
+illum 1
+map_Kd dwarvensignpostbase.png

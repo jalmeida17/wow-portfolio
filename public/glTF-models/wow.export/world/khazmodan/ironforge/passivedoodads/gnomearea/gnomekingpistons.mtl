@@ -1,0 +1,3 @@
+newmtl mat_gnomekingpistons
+illum 1
+map_Kd gnomekingpistons.png

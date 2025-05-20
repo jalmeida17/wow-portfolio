@@ -1,0 +1,6 @@
+newmtl mat_ironstump01
+illum 1
+map_Kd ironstump01.png
+newmtl mat_ironforgefirbranch01
+illum 1
+map_Kd ironforgefirbranch01.png

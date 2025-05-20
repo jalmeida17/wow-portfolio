@@ -1,0 +1,9 @@
+newmtl mat_braziertrim01
+illum 1
+map_Kd braziertrim01.png
+newmtl mat_braziertrim01_dirty
+illum 1
+map_Kd braziertrim01_dirty.png
+newmtl mat_woodburned
+illum 1
+map_Kd woodburned.png

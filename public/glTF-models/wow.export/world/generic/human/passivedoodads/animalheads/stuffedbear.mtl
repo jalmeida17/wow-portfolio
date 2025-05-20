@@ -1,0 +1,9 @@
+newmtl mat_bearskin
+illum 1
+map_Kd bearskin.png
+newmtl mat_lochmodantreestump01
+illum 1
+map_Kd lochmodantreestump01.png
+newmtl mat_lochmodanshrub02a
+illum 1
+map_Kd lochmodanshrub02a.png

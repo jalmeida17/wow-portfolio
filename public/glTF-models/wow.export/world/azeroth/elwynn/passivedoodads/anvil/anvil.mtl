@@ -1,0 +1,3 @@
+newmtl mat_anvil_01
+illum 1
+map_Kd ..\..\..\..\skillactivated\tradeskillenablers\anvil_01.png

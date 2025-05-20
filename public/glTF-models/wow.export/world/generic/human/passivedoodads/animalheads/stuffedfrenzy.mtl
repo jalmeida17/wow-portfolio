@@ -1,0 +1,6 @@
+newmtl mat_frenzyskinblue
+illum 1
+map_Kd ..\..\..\..\..\creature\frenzy\frenzyskinblue.png
+newmtl mat_arathistump01
+illum 1
+map_Kd ..\..\..\..\lordaeron\arathi\passivedoodads\trees\arathistump01.png

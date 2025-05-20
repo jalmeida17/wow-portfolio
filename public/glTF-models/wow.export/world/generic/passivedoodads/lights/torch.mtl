@@ -1,0 +1,9 @@
+newmtl mat_flamelicksmall
+illum 1
+map_Kd ..\..\..\kalimdor\silithus\passivedoodads\ahnqiraj\torch\flamelicksmall.png
+newmtl mat_t_vfx_glow01_64
+illum 1
+map_Kd ..\..\..\..\spells\t_vfx_glow01_64.png
+newmtl mat_stormwind_torch
+illum 1
+map_Kd stormwind_torch.png
