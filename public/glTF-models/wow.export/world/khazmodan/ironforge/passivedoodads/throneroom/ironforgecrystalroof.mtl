@@ -1,0 +1,9 @@
+newmtl mat_cyanstarflash
+illum 1
+map_Kd ..\..\..\..\..\spells\cyanstarflash.png
+newmtl mat_mithril_diamond
+illum 1
+map_Kd mithril_diamond.png
+newmtl mat_th_obsidianbark_reflect
+illum 1
+map_Kd ..\..\..\..\expansion03\doodads\twilighthighlands\trees\th_obsidianbark_reflect.png

@@ -1,0 +1,3 @@
+newmtl mat_barberpole
+illum 1
+map_Kd barberpole.png

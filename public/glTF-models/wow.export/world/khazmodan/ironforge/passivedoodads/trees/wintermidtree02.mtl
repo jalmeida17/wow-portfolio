@@ -1,0 +1,6 @@
+newmtl mat_ironforgefirtrunk01
+illum 1
+map_Kd ironforgefirtrunk01.png
+newmtl mat_wintertreebranch05_blue
+illum 1
+map_Kd wintertreebranch05_blue.png

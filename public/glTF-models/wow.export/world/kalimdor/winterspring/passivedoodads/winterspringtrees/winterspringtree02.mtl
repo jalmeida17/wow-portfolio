@@ -1,0 +1,9 @@
+newmtl mat_trunknew02
+illum 1
+map_Kd ..\..\..\..\khazmodan\ironforge\passivedoodads\trees\trunknew02.png
+newmtl mat_trunkbranch01
+illum 1
+map_Kd ..\..\..\..\khazmodan\ironforge\passivedoodads\trees\trunkbranch01.png
+newmtl mat_wintersticks01
+illum 1
+map_Kd ..\..\..\..\khazmodan\ironforge\passivedoodads\trees\wintersticks01.png

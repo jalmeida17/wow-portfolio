@@ -1,0 +1,9 @@
+newmtl mat_meltingpotchain
+illum 1
+map_Kd ..\..\..\..\azeroth\deadmines\passivedoodads\goblinmeltingpot\meltingpotchain.png
+newmtl mat_moltonsteelalpha01
+illum 1
+map_Kd ..\..\..\..\azeroth\deadmines\passivedoodads\goblinmeltingpot\moltonsteelalpha01.png
+newmtl mat_lavapot
+illum 1
+map_Kd lavapot.png

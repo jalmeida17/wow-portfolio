@@ -1,0 +1,6 @@
+newmtl mat_ironstump02a
+illum 1
+map_Kd ironstump02a.png
+newmtl mat_ironforgestick03
+illum 1
+map_Kd ironforgestick03.png

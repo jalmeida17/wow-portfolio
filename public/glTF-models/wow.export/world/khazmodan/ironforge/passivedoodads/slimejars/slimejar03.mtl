@@ -1,0 +1,6 @@
+newmtl mat_slimejargoo
+illum 1
+map_Kd slimejargoo.png
+newmtl mat_slimejar01
+illum 1
+map_Kd slimejar01.png

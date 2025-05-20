@@ -1,0 +1,6 @@
+newmtl mat_dwarvenbookshelfbase
+illum 1
+map_Kd dwarvenbookshelfbase.png
+newmtl mat_dwarvenbedquilt
+illum 1
+map_Kd dwarvenbedquilt.png

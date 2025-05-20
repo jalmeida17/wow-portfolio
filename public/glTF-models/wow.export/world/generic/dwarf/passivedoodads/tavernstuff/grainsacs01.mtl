@@ -1,0 +1,3 @@
+newmtl mat_grainsac01
+illum 1
+map_Kd grainsac01.png

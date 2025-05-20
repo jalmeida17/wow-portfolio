@@ -1,0 +1,6 @@
+newmtl mat_gnomekingpistons
+illum 1
+map_Kd gnomekingpistons.png
+newmtl mat_gnomegearfront
+illum 1
+map_Kd gnomegearfront.png

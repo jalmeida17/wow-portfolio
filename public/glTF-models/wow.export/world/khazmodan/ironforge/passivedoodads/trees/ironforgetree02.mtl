@@ -1,0 +1,6 @@
+newmtl mat_ironforgefirtrunk01_new
+illum 1
+map_Kd ironforgefirtrunk01_new.png
+newmtl mat_ironforgetreefirtop01
+illum 1
+map_Kd ironforgetreefirtop01.png

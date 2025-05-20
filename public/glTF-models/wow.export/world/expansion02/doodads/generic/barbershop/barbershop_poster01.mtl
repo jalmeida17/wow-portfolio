@@ -1,0 +1,3 @@
+newmtl mat_barberwigs
+illum 1
+map_Kd barberwigs.png

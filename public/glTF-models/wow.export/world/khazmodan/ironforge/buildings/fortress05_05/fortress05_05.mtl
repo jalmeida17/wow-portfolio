@@ -1,0 +1,12 @@
+newmtl mat_fortresstrim01_01
+illum 1
+map_Kd ..\fortress01_06\fortresstrim01_01.png
+newmtl mat_fadetolight01_01
+illum 1
+map_Kd ..\fortress01_09\fadetolight01_01.png
+newmtl mat_windowtrim01_02
+illum 1
+map_Kd ..\fortress01_06\windowtrim01_02.png
+newmtl mat_wall01_08
+illum 1
+map_Kd ..\fortress01_06\wall01_08.png

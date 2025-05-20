@@ -1,0 +1,15 @@
+newmtl mat_wood08
+illum 1
+map_Kd wood08.png
+newmtl mat_lavalump2
+illum 1
+map_Kd ..\..\..\..\..\spells\lavalump2.png
+newmtl mat_ash04
+illum 1
+map_Kd ash04.png
+newmtl mat_firewall2b
+illum 1
+map_Kd ..\..\..\..\..\spells\firewall2b.png
+newmtl mat_t_vfx_border7b
+illum 1
+map_Kd ..\..\..\..\..\spells\t_vfx_border7b.png

@@ -1,0 +1,9 @@
+newmtl mat_woodplain
+illum 1
+map_Kd ..\excavationcrane\woodplain.png
+newmtl mat_ironrim
+illum 1
+map_Kd ..\excavationbarriers\ironrim.png
+newmtl mat_finishedwood
+illum 1
+map_Kd ..\..\..\..\..\dungeons\textures\brian\excavation\finishedwood.png

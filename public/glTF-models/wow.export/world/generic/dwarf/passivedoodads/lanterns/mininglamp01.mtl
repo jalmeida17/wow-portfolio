@@ -1,0 +1,6 @@
+newmtl mat_gypsywagon
+illum 1
+map_Kd gypsywagon.png
+newmtl mat_hanginglantern01
+illum 1
+map_Kd hanginglantern01.png

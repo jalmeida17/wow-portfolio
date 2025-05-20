@@ -1,0 +1,12 @@
+newmtl mat_books_dwarf_huge_pages_01
+illum 1
+map_Kd books_dwarf_huge_pages_01.png
+newmtl mat_books_dwarf_huge_01
+illum 1
+map_Kd books_dwarf_huge_01.png
+newmtl mat_orbreflectbright
+illum 1
+map_Kd ..\..\..\..\item\objectcomponents\weapon\orbreflectbright.png
+newmtl mat_dwarventablebase
+illum 1
+map_Kd ..\..\..\generic\dwarf\passivedoodads\tables\dwarventablebase.png

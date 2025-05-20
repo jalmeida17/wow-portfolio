@@ -1,0 +1,6 @@
+newmtl mat_ironforgefallentrunk001
+illum 1
+map_Kd ironforgefallentrunk001.png
+newmtl mat_ironforgestick03
+illum 1
+map_Kd ..\..\..\..\khazmodan\ironforge\passivedoodads\trees\ironforgestick03.png

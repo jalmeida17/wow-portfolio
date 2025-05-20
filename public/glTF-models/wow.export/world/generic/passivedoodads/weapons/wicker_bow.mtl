@@ -1,0 +1,3 @@
+newmtl mat_primbows
+illum 1
+map_Kd primbows.png

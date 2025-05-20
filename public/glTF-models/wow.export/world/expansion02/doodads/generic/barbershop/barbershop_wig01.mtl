@@ -1,0 +1,6 @@
+newmtl mat_scourgefemalehairskin
+illum 1
+map_Kd ..\..\..\..\..\interface\glues\models\ui_rs_scourge\scourgefemalehairskin.png
+newmtl mat_barberwigs
+illum 1
+map_Kd barberwigs.png

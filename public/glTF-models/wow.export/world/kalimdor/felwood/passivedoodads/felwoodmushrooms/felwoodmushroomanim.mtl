@@ -1,0 +1,9 @@
+newmtl mat_felwoodmushroom_white
+illum 1
+map_Kd felwoodmushroom_white.png
+newmtl mat_greyglowball642
+illum 1
+map_Kd greyglowball642.png
+newmtl mat_dust1
+illum 1
+map_Kd ..\..\..\..\..\particles\dust1.png

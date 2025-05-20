@@ -1,0 +1,6 @@
+newmtl mat_ogrechainmeat01
+illum 1
+map_Kd ..\..\..\undead\passivedoodads\bell\ogrechainmeat01.png
+newmtl mat_anchormetal
+illum 1
+map_Kd ..\..\..\undead\passivedoodads\bell\anchormetal.png

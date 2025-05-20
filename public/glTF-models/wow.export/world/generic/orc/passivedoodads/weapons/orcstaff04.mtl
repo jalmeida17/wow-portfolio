@@ -1,0 +1,3 @@
+newmtl mat_stave_2h_other_d_01green
+illum 1
+map_Kd ..\..\..\..\..\item\objectcomponents\weapon\stave_2h_other_d_01green.png
