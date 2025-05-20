@@ -12,10 +12,13 @@ function ThreeJSEnv() {
   const [cameraRef, setCameraRef] = useState(null);
   const [controlsRef, setControlsRef] = useState(null);
   const [spectatorMode, setSpectatorMode] = useState(false);
-
   const scenesPositions = {
-    magnibronzebeard: { x: -266.47, y: 11.66, z: -15.39 },
-  }
+  magnibronzebeard: { x: -266.47, y: 11.66, z: -15.39 },
+  test: {x: -534, y: 11.66, z: 364},}
+  const [sceneIndex, setSceneIndex] = useState(0); // Use state for the index
+  const sceneKeys = Object.keys(scenesPositions); // Get array of scene keys
+  const [currentScene, setCurrentScene] = useState(scenesPositions[sceneKeys[0]]);
+
 
   useEffect(() => {
     if (!mountRef.current) {
@@ -54,11 +57,7 @@ function ThreeJSEnv() {
     controls.maxPolarAngle = Math.PI / 2;
     controls.zoomSpeed = 1.0; // Default zoom speed
 
-    // Grid Helper
-    const gridHelper = new THREE.GridHelper(100, 100);
-    scene.add(gridHelper);
-
-    camera.position.set(scenesPositions.magnibronzebeard.x, scenesPositions.magnibronzebeard.y, scenesPositions.magnibronzebeard.z);
+    camera.position.set(currentScene.x, currentScene.y, currentScene.z); // Set initial camera position
 
     
     let animationFrameId;
@@ -101,8 +100,67 @@ function ThreeJSEnv() {
   }
 }, [spectatorMode, controlsRef]);
 
+  const nextScene = () => {
+    const nextIndex = (sceneIndex + 1) % sceneKeys.length;
+    setSceneIndex(nextIndex);
+    setCurrentScene(scenesPositions[sceneKeys[nextIndex]]);
+  }
+  
+  const prevScene = () => {
+    const prevIndex = (sceneIndex - 1 + sceneKeys.length) % sceneKeys.length;
+    setSceneIndex(prevIndex);
+    setCurrentScene(scenesPositions[sceneKeys[prevIndex]]);
+  }
+
+  useEffect(() => {
+  if (cameraRef && currentScene && controlsRef) {
+    // Set camera position
+    cameraRef.position.set(currentScene.x, currentScene.y, currentScene.z);
+    
+    // Reset the orbit controls target to be in front of where the camera is looking
+    const lookDirection = new THREE.Vector3(0, 0, -1);
+    lookDirection.applyQuaternion(cameraRef.quaternion);
+    
+    // Set target position to be 10 units in front of the camera
+    const targetPosition = new THREE.Vector3();
+    targetPosition.copy(cameraRef.position).add(lookDirection.multiplyScalar(10));
+    
+    controlsRef.target.copy(targetPosition);
+    controlsRef.update(); // Important: update controls after changing target
+  }
+}, [currentScene, cameraRef, controlsRef]);
+
+
   return (
-    <>
+    <>{spectatorMode == false && (
+      <div>
+        <button
+        style={{
+          position: 'absolute',
+          bottom: 10,
+          left: 10,
+          padding: '5px 5px',
+          color: 'white',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer',
+          zIndex: 10
+        }} onClick={() => prevScene()}> {'<- Previous'}</button>
+  
+        <button
+        style={{
+          position: 'absolute',
+          bottom: 10,
+          right: 10,
+          padding: '5px 5px',
+          color: 'white',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer',
+          zIndex: 10,
+        }} onClick={() => nextScene()}>{'Next ->'}</button>
+      </div>
+    )}
     <button
       style={{
         position: 'absolute',
@@ -118,6 +176,7 @@ function ThreeJSEnv() {
       onClick={() => setSpectatorMode(!spectatorMode)}>
       {spectatorMode ? 'Exit Spectator Mode' : 'Enter Spectator Mode'}
     </button>
+    
       <div
         style={{
           position: 'relative',
@@ -154,6 +213,7 @@ function ThreeJSEnv() {
             fontSize: '14px',
             zIndex: 10
           }}
+
         >
         </div>
         )}
@@ -174,6 +234,7 @@ function ThreeJSEnv() {
           Controls: WASD/ZQSD to move | Space/Shift for up/down
         </div>
         )}
+      
       </div>
     </>
   );

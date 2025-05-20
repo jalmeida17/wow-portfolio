@@ -1,13 +1,18 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import * as THREE from 'three';
 
-
 function BronzebeardModel({ scene }) {
-
   const mixerRef = useRef(null);
   const clockRef = useRef(new THREE.Clock());
-  const animationFrameRef = useRef(null); // Add this to store and cancel animation frames
+  const animationFrameRef = useRef(null);
+  const modelRef = useRef(null);
+  const actionsRef = useRef({});
+  const animationIntervalRef = useRef(null);
+  const animationCountRef = useRef(0);
+  const [currentAnimation, setCurrentAnimation] = useState('Talk');
+  const prevActionRef = useRef(null);
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     if (!scene) return;
@@ -18,39 +23,54 @@ function BronzebeardModel({ scene }) {
       (gltf) => {
         const animations = gltf.animations;
         const bronzebeardModel = gltf.scene;
+        modelRef.current = bronzebeardModel;
+        
+        bronzebeardModel.traverse((child) => {
+          if (child.isMesh) {
+            child.name = child.name || 'BronzebeardMesh';
+          }
+        });
+        
         const mixer = new THREE.AnimationMixer(bronzebeardModel);
         mixerRef.current = mixer;
         bronzebeardModel.position.set(-264.38, 9.5, -15.09); 
-        bronzebeardModel.rotation.set(0, Math.PI / 1, 0); // Rotate the model to face the camera
+        bronzebeardModel.rotation.set(0, Math.PI / 1, 0);
         bronzebeardModel.scale.set(2, 2, 2);
         scene.add(bronzebeardModel);
 
         console.log('Available animations:', animations.map(a => a.name));
-        
-        const animation = THREE.AnimationClip.findByName(animations, 'EmoteFlex (ID 82 variation 0)');
-        if (animation) {
-          const action = mixer.clipAction(animation);
-          console.log('Animation found:', action);
-          action.play();
-        } else {
-          console.warn('Animation "EmoteFlex (ID 82 variation 0)" not found');
-          // Try the first available animation as fallback
-          if (animations.length > 0) {
-            const action = mixer.clipAction(animations[0]);
-            console.log('Playing fallback animation:', animations[0].name);
-            action.play();
-          }
-        }
 
+        const animationList = {
+          Flex: 'EmoteFlex (ID 82 variation 0)',
+          Talk: 'EmoteTalk (ID 60 variation 0)'
+        };
+        
+        // Store all animation actions
+        Object.entries(animationList).forEach(([key, animName]) => {
+          const clip = THREE.AnimationClip.findByName(animations, animName);
+          if (clip) {
+            const action = mixer.clipAction(clip);
+            // Configure animations for better transitions
+            action.clampWhenFinished = false;
+            action.loop = THREE.LoopRepeat;
+            actionsRef.current[key] = action;
+          }
+        });
+        
+        // Play the initial Talk animation
+        playAnimation('Talk', 0.5); // Start with a smooth fade in
+        
+        // Start the animation cycle
+        startAnimationCycle();
+        
         animate();
       },
       undefined,
       (error) => {
-        console.error('An error happened while loading Magni Bronzebeard :', error);
+        console.error('An error happened while loading Magni Bronzebeard:', error);
       }
     );
     
-    // Animation loop function
     const animate = () => {
       const delta = clockRef.current.getDelta();
       
@@ -58,27 +78,94 @@ function BronzebeardModel({ scene }) {
         mixerRef.current.update(delta);
       }
       
-      // Store the animation frame ID so we can cancel it later
       animationFrameRef.current = requestAnimationFrame(animate);
     };
     
-    // Cleanup function
     return () => {
-      // Cancel the animation frame
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
         animationFrameRef.current = null;
       }
       
-      // Stop all animations
       if (mixerRef.current) {
         mixerRef.current.stopAllAction();
       }
+      
+      // Clear any running animations
+      if (animationIntervalRef.current) {
+        clearInterval(animationIntervalRef.current);
+      }
+      
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [scene]);
+
+  const startAnimationCycle = () => {
+    // Using a recursive function instead of interval to have different durations
+    const runCycle = () => {
+      animationCountRef.current = (animationCountRef.current + 1) % 4;
+      
+      if (animationCountRef.current === 3) {
+        // Every fourth cycle, play Flex for 2500ms
+        playAnimation('Flex', 0.4); // Slightly faster crossfade for Flex
+        setCurrentAnimation('Flex');
+;
+        
+        // Schedule next animation after Flex duration
+        timeoutRef.current = setTimeout(() => {
+          runCycle();
+        }, 2500);
+      } else {
+        // Other cycles, play Talk for 3000ms
+        playAnimation('Talk', 0.3); // Smoother crossfade for Talk
+        setCurrentAnimation('Talk');
+;
+        
+        // Schedule next animation after Talk duration
+        timeoutRef.current = setTimeout(() => {
+          runCycle();
+        }, 2000);
+      }
     };
     
-  }, [scene]); // Only re-run if scene changes
+    // Start the cycle
+    runCycle();
+  };
+
+  const playAnimation = (animationName, duration = 0.5) => {
+    if (!actionsRef.current[animationName]) {
+      console.warn(`Animation ${animationName} not found`);
+      return;
+    }
+    
+    const action = actionsRef.current[animationName];
+    
+    if (prevActionRef.current && prevActionRef.current !== action) {
+      // Crossfade from the previous animation to the new one
+      action.reset();
+      action.setEffectiveTimeScale(1);
+      action.setEffectiveWeight(1);
+      action.time = 0;
+      
+      // Enable the animation and fade it in
+      action.enabled = true;
+      action.crossFadeFrom(prevActionRef.current, duration, true);
+      action.play();
+      
+;
+    } else {
+      // First animation or same animation again
+      action.reset();
+      action.play();;
+    }
+    
+    // Store this animation as the previous one for next transition
+    prevActionRef.current = action;
+  };
   
-  return null; // This component doesn't render anything
+  return null;
 }
 
-export default BronzebeardModel
+export default BronzebeardModel;
