@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import IronforgeModel from '../glTF-loader/ironforge-model';
 import BronzebeardModel from '../glTF-loader/bronzebeard-model';
+import AnduinModel from '../glTF-loader/anduin-model';
 import SpectatorMode from './components/spectator-mode';
 
 function ThreeJSEnv() {
@@ -14,7 +15,7 @@ function ThreeJSEnv() {
   const [spectatorMode, setSpectatorMode] = useState(false);
   const scenesPositions = {
   magnibronzebeard: { x: -266.47, y: 11.66, z: -15.39 },
-  test: {x: -534, y: 11.66, z: 364},}
+  anduin: {x: -534, y: 12.5, z: 364},}
   const [sceneIndex, setSceneIndex] = useState(0); // Use state for the index
   const sceneKeys = Object.keys(scenesPositions); // Get array of scene keys
   const [currentScene, setCurrentScene] = useState(scenesPositions[sceneKeys[0]]);
@@ -189,6 +190,7 @@ function ThreeJSEnv() {
           <>
             <IronforgeModel scene={sceneRef} /> 
             <BronzebeardModel scene={sceneRef} />
+            <AnduinModel scene={sceneRef} />
           </>
         )}
         {cameraRef && controlsRef && spectatorMode && (
