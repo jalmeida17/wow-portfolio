@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 function IronforgeModel({ scene }) {
+  
   useEffect(() => {
     if (!scene) return;
     

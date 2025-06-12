@@ -4,8 +4,10 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import IronforgeModel from '../glTF-loader/ironforge-model';
 import BronzebeardModel from '../glTF-loader/bronzebeard-model';
-import AnduinModel from '../glTF-loader/anduin-model';
+import RifleManModel from '../glTF-loader/rifleman-model';
 import SpectatorMode from './components/spectator-mode';
+import RamModel from '../glTF-loader/ram-model';
+import GnomeBotModel from '../glTF-loader/gnomebot-model';
 
 function ThreeJSEnv() {
   const mountRef = useRef(null);
@@ -15,7 +17,7 @@ function ThreeJSEnv() {
   const [spectatorMode, setSpectatorMode] = useState(false);
   const scenesPositions = {
   magnibronzebeard: { x: -266.47, y: 11.66, z: -15.39 },
-  anduin: {x: -534, y: 12.5, z: 364},}
+  ironforgeGuard1: {x: -533, y: 12, z: 364},}
   const [sceneIndex, setSceneIndex] = useState(0); // Use state for the index
   const sceneKeys = Object.keys(scenesPositions); // Get array of scene keys
   const [currentScene, setCurrentScene] = useState(scenesPositions[sceneKeys[0]]);
@@ -87,7 +89,6 @@ function ThreeJSEnv() {
         currentMount.removeChild(renderer.domElement);
       }
       renderer.dispose();
-      gridHelper.dispose();
       controls.dispose();
     };
   }, []);
@@ -190,14 +191,16 @@ function ThreeJSEnv() {
           <>
             <IronforgeModel scene={sceneRef} /> 
             <BronzebeardModel scene={sceneRef} />
-            <AnduinModel scene={sceneRef} />
+            <RifleManModel scene={sceneRef} />
+            <RamModel scene={sceneRef} />
+            <GnomeBotModel scene={sceneRef} />
           </>
         )}
         {cameraRef && controlsRef && spectatorMode && (
           <SpectatorMode 
             camera={cameraRef} 
             controls={controlsRef} 
-            moveSpeed={1}
+            moveSpeed={0.5}
             rotateSpeed={0.05}
           />
         )}
